@@ -17,6 +17,10 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get('/test' , (req, res) => {
+    res.json({status:200, message: 'hellow world'})
+})
+
 app.use('/api/auth', authRouter)
 app.use('/api/paciente', pacienteRouter)
 app.use('/api/medicos', medicoRouter)
